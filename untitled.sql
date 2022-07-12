@@ -1,11 +1,5 @@
 1.1. Отношение (таблица)
 Сформулируйте SQL запрос для создания таблицы book:
-Поле	Тип, описание
-book_id	INT PRIMARY KEY AUTO_INCREMENT
-title	VARCHAR(50)
-author	VARCHAR(30)
-price	DECIMAL(8, 2)
-amount	INT
 CREATE TABLE book(
    book_id  INT PRIMARY KEY AUTO_INCREMENT, 
    title    VARCHAR(50),
@@ -14,32 +8,23 @@ CREATE TABLE book(
    amount	INT;
 
 Занесите новую строку в таблицу book:
-book_id	title	author	price	amount
-INT PRIMARY KEY AUTO_INCREMENT	VARCHAR(50)	VARCHAR(30)	DECIMAL(8,2)	INT
-1	Мастер и Маргарита	Булгаков М.А.	670.99	3
 INSERT INTO book(book_id,title,author,price,amount) 
 VALUES (1,'Мастер и Маргарита','Булгаков М.А.',670.99,3);
 
 Занесите три последние записи в таблицу book:
-book_id	title	author	price	amount
-INT PRIMARY KEY AUTO_INCREMENT	VARCHAR(50)	VARCHAR(30)	DECIMAL(8,2)	INT
-1	Мастер и Маргарита	Булгаков М.А.	670.99	3
-2	Белая гвардия	Булгаков М.А.	540.50	5
-3	Идиот	Достоевский Ф.М.	460.00	10
-4	Братья Карамазовы	Достоевский Ф.М.	799.01	2
 INSERT INTO book(book_id,title,author,price,amount)
 VALUES (2,'Белая гвардия','Булгаков М.А.',540.50,5),
 (3,'Идиот','Достоевский Ф.М.',460.00,10),
 (4,'Братья Карамазовы','Достоевский Ф.М.',799.01,2);
 
 1.2.  Выборка данных. 
-Вывести информацию о всех книгах, хранящихся на складе.
+Вывести информацию о всех книгах, хранящихся на складе:
 SELECT * FROM book;
 
-Выбрать авторов, название книг и их цену из таблицы book.
+Выбрать авторов, название книг и их цену из таблицы book:
 SELECT author,title,price FROM book;
 
-Выбрать названия книг и авторов из таблицы book, для поля title задать имя(псевдоним) Название, для поля author –  Автор. 
+Выбрать названия книг и авторов из таблицы book, для поля title задать имя(псевдоним) Название, для поля author –  Автор:
 SELECT title AS Название, author AS Автор
 FROM book;
 
